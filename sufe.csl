@@ -18,7 +18,7 @@
     <category citation-format="author-date"/>
     <category field="generic-base"/>
     <issn>1002-7264</issn>
-    <updated>2024-03-01T04:01:10+00:00</updated>
+    <updated>2024-03-01T13:07:40+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="zh">
@@ -61,7 +61,7 @@
     <choose>
       <if variable="author">
         <names variable="author">
-          <name delimiter="，" et-al-use-first="19" initialize="false"/>
+          <name delimiter="，" et-al-use-first="19" initialize="false" sort-separator=""/>
         </names>
       </if>
       <else>
@@ -94,7 +94,19 @@
     </choose>
   </macro>
   <macro name="title">
-    <text variable="title" text-case="title" quotes="false" prefix="&quot;" suffix="&quot;"/>
+    <group>
+      <choose>
+        <if type="book" match="none">
+          <text value="&quot;"/>
+        </if>
+      </choose>
+      <text variable="title" text-case="title" quotes="false"/>
+      <choose>
+        <if type="book" match="none">
+          <text value="&quot;"/>
+        </if>
+      </choose>
+    </group>
   </macro>
   <macro name="title-zh">
     <text variable="title" prefix="《" suffix="》"/>
@@ -265,7 +277,6 @@
         <group prefix="，">
           <text variable="publisher"/>
           <text variable="genre" suffix="学位论文"/>
-          <text macro="issued-year" prefix="，" suffix="年"/>
         </group>
       </else-if>
       <else-if type="article-journal article-magazine article-newspaper" match="any">
@@ -283,6 +294,13 @@
       </else-if>
       <else-if type="patent">
         <text macro="issued-date" prefix=". "/>
+      </else-if>
+      <else-if type="webpage software" match="any">
+        <choose>
+          <if match="any" variable="URL">
+            <text variable="URL" prefix="URL："/>
+          </if>
+        </choose>
       </else-if>
       <else>
         <text macro="publisher" prefix=". "/>
