@@ -29,7 +29,9 @@
 
 （Chen et al.，2012；Dursun & Caber，2016）
 
-**参考文献列表**
+……
+
+**参考文献列表：**
 
 [1] 蔡淑琴，马玉涛，王瑞，2013：《在线口碑传播的意见领袖识别方法研究》，《中国管理科学》第2期，第185~192页。
 
@@ -39,10 +41,31 @@
 
 [4]	Ma H., Chen J., Zhu K. , 2006, "Customer Value Prediction Model Based on Markov Chain in B2C"//, 2006 International Conference on Management Science and EngineeringLille, France: IEEE: 52~55.
 
-**备注：由于个人能力有限，该格式有可能没有包含全部格式要求，目前仅用于个人使用，各位同学如在使用时发现问题可以自行修改或给予反馈，祝大家毕业顺利！**
+……
 
-## 使用方法：
+**备注：由于个人能力有限，该格式仍在更新，有可能没有包含全部格式要求，目前仅用于个人使用，各位同学如在使用时发现问题可以自行修改或给予反馈，祝大家毕业顺利！**
 
+## csl文件使用方法：
+
+![image](https://github.com/angus-lu/SUFE-related-csl/blob/main/img/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%AD%A5%E9%AA%A41.PNG)
+
+1. 在Word中的Zotero插件中点击Document Preferences
+
+![image](https://github.com/angus-lu/SUFE-related-csl/blob/main/img/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%AD%A5%E9%AA%A42.PNG)
+
+2.点击管理样式
+
+![image](https://github.com/angus-lu/SUFE-related-csl/blob/main/img/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%AD%A5%E9%AA%A43.PNG)
+
+3.点击“+”
+
+![image](https://github.com/angus-lu/SUFE-related-csl/blob/main/img/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%AD%A5%E9%AA%A44.PNG)
+
+4.将打开csl文件
+
+![image](https://github.com/angus-lu/SUFE-related-csl/blob/main/img/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%AD%A5%E9%AA%A45.PNG)
+
+5.回到Document Preferences中使用SUFE样式，Refresh即可
 
 ## 上海财经大学研究生学位论文格式要求（摘抄）：
 
@@ -115,6 +138,8 @@
 （4）在文献名后可注明“中译本”。例：“约翰，1978：《论需求》，中译本，译文出版社。”
 
 **3.6.3 外文文献编排方法**
+
+
 每篇文献在同一行按以下顺序连续注明，中间用逗号隔开：
 
 （1）所引文献为外文原文，不论是否存在该文的中译本，都可按外文原文文献处理。
