@@ -18,7 +18,7 @@
     <category citation-format="author-date"/>
     <category field="generic-base"/>
     <issn>1002-7264</issn>
-    <updated>2024-03-01T13:07:40+00:00</updated>
+    <updated>2024-03-02T03:42:57+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="zh">
@@ -150,7 +150,7 @@
     <choose>
       <if variable="publisher">
         <group delimiter=": ">
-          <text variable="publisher-place"/>
+          <text variable="publisher-place" prefix=", "/>
           <group delimiter=", ">
             <text variable="publisher"/>
           </group>
@@ -205,12 +205,11 @@
     <text macro="title"/>
     <choose>
       <if type="bill book chapter legislation paper-conference standard thesis" match="any">
-        <text macro="editor" prefix=". "/>
+        <text macro="editor" prefix=" In "/>
         <choose>
           <if variable="container-title">
-            <text value="//"/>
             <text macro="container-contributors" suffix=". "/>
-            <text variable="container-title" prefix=", " font-style="italic" text-case="title"/>
+            <text variable="container-title" text-case="title" font-style="italic" prefix=", "/>
           </if>
           <else>
             <text value=". "/>
