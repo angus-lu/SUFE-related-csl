@@ -18,7 +18,7 @@
     <category citation-format="author-date"/>
     <category field="generic-base"/>
     <issn>1002-7264</issn>
-    <updated>2024-03-02T03:42:57+00:00</updated>
+    <updated>2024-05-07T12:52:47+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="zh">
@@ -33,12 +33,12 @@
         <single>p.</single>
         <multiple>pp.</multiple>
       </term>
-      <term name="page-range-delimiter">~</term>
+      <term name="page-range-delimiter">-</term>
     </terms>
   </locale>
   <locale xml:lang="en">
     <terms>
-      <term name="page-range-delimiter">~</term>
+      <term name="page-range-delimiter">-</term>
       <term name="page" form="short">
         <single>pp.</single>
         <multiple>pp.</multiple>
@@ -118,7 +118,7 @@
   </macro>
   <macro name="editor">
     <names variable="editor translator">
-      <name/>
+      <name name-as-sort-order="all"/>
       <label form="short" prefix=", "/>
     </names>
   </macro>
@@ -143,7 +143,7 @@
   <macro name="serial-information-zh">
     <group delimiter="，">
       <text variable="issue" prefix="第" suffix="期"/>
-      <text variable="page" prefix="第" suffix="页"/>
+      <text variable="page" font-variant="normal" prefix="第" suffix="页"/>
     </group>
   </macro>
   <macro name="publisher">
@@ -200,7 +200,7 @@
     </choose>
   </macro>
   <macro name="entry-layout-en">
-    <text macro="author" suffix=". "/>
+    <text macro="author"/>
     <text macro="issued-year" prefix=", " suffix=", "/>
     <text macro="title"/>
     <choose>
@@ -212,7 +212,7 @@
             <text variable="container-title" text-case="title" font-style="italic" prefix=", "/>
           </if>
           <else>
-            <text value=". "/>
+            <text value=""/>
           </else>
         </choose>
         <text macro="edition" suffix=". "/>
@@ -239,6 +239,16 @@
           </choose>
         </group>
       </else-if>
+      <else-if type="webpage software" match="any">
+        <choose>
+          <if match="any" variable="URL">
+            <text variable="URL" prefix=", URL: "/>
+          </if>
+        </choose>
+      </else-if>
+      <else-if type="article" match="all">
+        <text variable="number" prefix=", "/>
+      </else-if>
       <else-if type="patent">
         <text macro="issued-date" prefix=". "/>
       </else-if>
@@ -258,10 +268,14 @@
     <text macro="title-zh" prefix="："/>
     <choose>
       <if type="bill book chapter legislation paper-conference report standard" match="any">
-        <text macro="editor" prefix=". "/>
+        <choose>
+          <if match="any" variable="container-title">
+            <text value="载于"/>
+          </if>
+        </choose>
+        <text macro="editor"/>
         <choose>
           <if variable="container-title">
-            <text value="//"/>
             <text macro="container-contributors" suffix=". "/>
             <text variable="container-title" prefix="《" suffix="》"/>
           </if>
@@ -281,7 +295,7 @@
       <else-if type="article-journal article-magazine article-newspaper" match="any">
         <group prefix="，">
           <choose>
-            <if variable="container-title">
+            <if variable="container-title" match="any">
               <text variable="container-title" prefix="《" suffix="》"/>
               <text macro="serial-information-zh"/>
             </if>
@@ -297,7 +311,7 @@
       <else-if type="webpage software" match="any">
         <choose>
           <if match="any" variable="URL">
-            <text variable="URL" prefix="URL："/>
+            <text variable="URL" prefix="，URL："/>
           </if>
         </choose>
       </else-if>
